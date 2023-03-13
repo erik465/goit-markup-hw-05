@@ -100,9 +100,12 @@ img{display: block;}
     letter-spacing: 0.02em;
     color: var(--navy-blue);
     padding: 24px 0px;
+
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.header-list-item a:hover, .header-list-item a:focus{
+.header-list-item a:is(:hover, :focus){
     color: var(--ocean)
 }
 
@@ -126,11 +129,27 @@ img{display: block;}
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: var(--slate);
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    
 }
 
-.header-contacts-list-item a:hover, .header-contacts-list-item a:focus{
+.header-contacts-list a::after{
+    content: "";
+    height: 4px;
+    width: 48px;
+    background: var(--ocean);
+}
+
+.header-contacts-list-item a:is(:hover, :focus){
     color: var(--ocean);
 }
+
+.page-active{
+    color: var(--ocean) !important;
+}
+
+
 
 /* -- /HEADER -- */
 
@@ -185,9 +204,12 @@ img{display: block;}
 
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 
-.hero-btn:hover, .hero-btn:focus{
+.hero-btn:is(:hover, :focus){
     background: var(--ocean);
 }
 /*-- /HERO --*/
@@ -346,6 +368,8 @@ img{display: block;}
     display: flex;
     align-items: center;
     justify-content: center;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .team-social-list-item a:is(:hover, :focus){
@@ -386,6 +410,9 @@ img{display: block;}
     display: flex;
     align-items: center;
     justify-content: center;
+
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .customers-list-item a:is(:hover, :focus){
@@ -396,6 +423,8 @@ img{display: block;}
     height: 45px;
     max-width: 85px;
     fill:#8E8F99;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .customers-list-item a:is(:hover, :focus) .customers-list-item-logo{
@@ -451,6 +480,9 @@ img{display: block;}
     align-items: center;
     justify-content: center;
     background: rgba(255, 255, 255, 0.1);;
+
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-social-list-item a:is(:hover, :focus){
 background: #31D0AA;
@@ -507,9 +539,11 @@ background: #31D0AA;
     border-radius: 4px;
     border: 1px solid #E7E9FC;
 
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.filters-list-item button:hover, .filters-list-item button:focus{
+.filters-list-item button:is(:hover,:focus){
     background: var(--ocean);
     color: #fff;
     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
@@ -543,6 +577,9 @@ background: #31D0AA;
     margin: 0;
     display: block;
     text-align: left;
+
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
 }
 
