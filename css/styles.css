@@ -134,11 +134,15 @@ img{display: block;}
     
 }
 
-.header-contacts-list a::after{
+.page-active::after{
     content: "";
+    display: block;
+    width: 100%;
     height: 4px;
-    width: 48px;
+    position: absolute;
+    top: 70px;
     background: var(--ocean);
+    border-radius: 2px;
 }
 
 .header-contacts-list-item a:is(:hover, :focus){
@@ -146,6 +150,7 @@ img{display: block;}
 }
 
 .page-active{
+    position: relative;
     color: var(--ocean) !important;
 }
 
@@ -569,23 +574,44 @@ background: #31D0AA;
     flex-direction: row;
     flex-wrap: wrap;
     gap:48px 24px;
-
-    
+  
 }
 
 .jobs-list-item a{
     margin: 0;
     display: block;
     text-align: left;
-
+    overflow: hidden;
+    max-height: 420px;
+    
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-
 }
 
 .jobs-list-item a:is(:hover, :focus) {
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
+
+.jobs-list-item a:is(:hover, :focus) > .jobs-list-item-hidden-text{
+    transform: translateY(-420px);
+}
+
+.jobs-list-item-hidden-text{
+    background: var(--iris);
+    width: 360px;
+    height: 300px;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.jobs-list-item-hidden-text p{
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;  
+    color: #F4F4FD;
+}
+
+
 
 
 
@@ -599,7 +625,7 @@ background: #31D0AA;
 
 
 
-.jobs-list-item  h2{
+.jobs-list-item-text  h2{
     font-size: 20px;
     line-height: 1.2;
     color: var(--navy-blue);
@@ -609,7 +635,7 @@ background: #31D0AA;
 
 }
 
-.jobs-list-item  p{
+.jobs-list-item-text  p{
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.02em;
