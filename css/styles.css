@@ -582,7 +582,7 @@ background: #31D0AA;
     display: block;
     text-align: left;
     overflow: hidden;
-    max-height: 420px;
+    max-height: 421px;
     
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -593,13 +593,19 @@ background: #31D0AA;
 }
 
 .jobs-list-item a:is(:hover, :focus) > .jobs-list-item-hidden-text{
-    transform: translateY(-420px);
+    transform: translateY(-421px);
 }
 
 .jobs-list-item-hidden-text{
     background: var(--iris);
     width: 360px;
     height: 300px;
+
+    position: relative;
+    z-index: 0;
+
+    padding: 40px 32px 0 32px;
+
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -619,6 +625,10 @@ background: #31D0AA;
     border-left: 1px solid #E7E9FC;
     border-right: 1px solid #E7E9FC;
     border-bottom: 1px solid #E7E9FC;
+    background: #fff;
+
+    position: relative;
+    z-index: 2;
 
     padding: 32px 16px;
 }
