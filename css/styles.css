@@ -674,7 +674,6 @@ img{display: block;}
 }
 
 .jobs-list-item a{
-    margin: 0;
     display: block;
 
     transition-property: box-shadow;
