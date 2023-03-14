@@ -101,6 +101,7 @@ img{display: block;}
     color: var(--navy-blue);
     padding: 24px 0px;
 
+    transition-property:color ;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -129,6 +130,8 @@ img{display: block;}
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: var(--slate);
+
+    transition-property: color;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     
@@ -140,7 +143,7 @@ img{display: block;}
     width: 100%;
     height: 4px;
     position: absolute;
-    top: 70px;
+    bottom:-1px;
     background: var(--ocean);
     border-radius: 2px;
 }
@@ -209,6 +212,7 @@ img{display: block;}
 
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 
+    transition-property: background;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
@@ -373,6 +377,8 @@ img{display: block;}
     display: flex;
     align-items: center;
     justify-content: center;
+
+    transition-property: background;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -416,6 +422,7 @@ img{display: block;}
     align-items: center;
     justify-content: center;
 
+    transition-property: border-color;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -428,6 +435,8 @@ img{display: block;}
     height: 45px;
     max-width: 85px;
     fill:#8E8F99;
+
+    transition-property: fill;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -486,11 +495,12 @@ img{display: block;}
     justify-content: center;
     background: rgba(255, 255, 255, 0.1);;
 
+    transition-property: background;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-social-list-item a:is(:hover, :focus){
-background: #31D0AA;
+    background: #31D0AA;
 }
 
 .footer-social-list-item-icon{
@@ -515,20 +525,21 @@ background: #31D0AA;
 
 /*--- POP-UP ---*/
 .pop-up{
+    height: 100vh;
+    width: 100vw;
+    background: rgba(46, 47, 66, 0.4);
+
     position: fixed;
     top: 0;
     left: 0;
 
-    transition: opacity 1s;
+    transition-property: opacity, visibility;
+    transition-duration: 1s;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
     
 }
 
-.backdrop{
-    height: 100vh;
-    width: 100vw;
-    background: rgba(46, 47, 66, 0.4);;
-}
 
 .pop-up-content{
     position: absolute;
@@ -536,9 +547,12 @@ background: #31D0AA;
     left: 50%;
     transform: translate(-50%, -50%);
 
-    height: 576px;
+    min-height: 576px;
     width: 408px;
     background: #FCFCFC;
+
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
 }
 
 .pop-up-close{
@@ -546,9 +560,10 @@ background: #31D0AA;
     align-items: center;
     justify-content: center;
 
+    cursor:pointer;
+
     height: 24px;
     width: 24px;
-    background: #E7E9FC;
     background: #E7E9FC;
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 50%;
@@ -556,17 +571,40 @@ background: #31D0AA;
     position: absolute;
     top: 24px;
     right: 24px;
+
+    transition-property: background;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+.pop-up-close:is(:hover, :focus){
+    background: var(--ocean);
+}
+
+
 
 .pop-up-close-icon{
     width: 8px;
     height: 8px;
+
     fill: var(--navy-blue);
+
+    transition-property: fill;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.is-hidden{
+.pop-up-close:is(:hover, :focus) .pop-up-close-icon{
+    fill:#fff;
+
+}
+
+
+.pop-up.is-hidden{
     visibility: hidden;
     opacity: 0%;
+    pointer-events: none;
+
 }
 /*--- /POP-UP ---*/
 
@@ -601,6 +639,7 @@ background: #31D0AA;
     border-radius: 4px;
     border: 1px solid #E7E9FC;
 
+    transition-property: background, color, box-shadow, border-color;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -637,10 +676,8 @@ background: #31D0AA;
 .jobs-list-item a{
     margin: 0;
     display: block;
-    text-align: left;
-    overflow: hidden;
-    max-height: 421px;
-    
+
+    transition-property: box-shadow;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -649,22 +686,32 @@ background: #31D0AA;
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
-.jobs-list-item a:is(:hover, :focus) > .jobs-list-item-hidden-text{
-    transform: translateY(-421px);
+.jobs-list-item-thumb{
+    height: 300px;
+    overflow: hidden;
+
 }
+
+
 
 .jobs-list-item-hidden-text{
     background: var(--iris);
     width: 360px;
     height: 300px;
 
-    position: relative;
-    z-index: 0;
+    transform: translateY(100%);
 
     padding: 40px 32px 0 32px;
 
+    transition-property: display transform;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.jobs-list-item a:is(:hover, :focus) .jobs-list-item-hidden-text{
+    transform: translateY(-100%);
+    display: block;
+
 }
 
 .jobs-list-item-hidden-text p{
