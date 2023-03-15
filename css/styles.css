@@ -595,7 +595,7 @@ img{display: block;}
 }
 
 .pop-up-close:is(:hover, :focus) .pop-up-close-icon{
-    fill:#fff;
+    fill:#ffffff;
 
 }
 
