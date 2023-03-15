@@ -702,14 +702,13 @@ img{display: block;}
 
     padding: 40px 32px 0 32px;
 
-    transition-property: display transform;
+    transition-property: transform;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .jobs-list-item a:is(:hover, :focus) .jobs-list-item-hidden-text{
     transform: translateY(-100%);
-    display: block;
 
 }
 
